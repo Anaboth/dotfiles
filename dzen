@@ -1,0 +1,79 @@
+#!/bin/bash
+sleep 1;
+
+pink=#f71be5
+white=#e1e1e1
+
+mem () {
+	used=$(free -m | grep Mem | awk '{print $3 + $5}')
+
+	total=$(free -m | grep Mem | awk '{print $2}')
+
+	echo $used / $total
+}
+
+up () {
+	_up=$(uptime -p | cut -c 4-)
+
+	echo $_up
+}
+
+cpu () {
+	usage=$(mpstat | grep all | awk '{print $4 + $5 + $6 + $7 + $8 + $9 + $10 + $11 + $12}')
+
+	echo $usage
+}
+
+pockages () {
+	qnt=$(pacman -Qq | wc -l)
+	upts=$(checkupdates | wc -l)
+
+	echo "$qnt/$upts"
+}
+
+cworkspace () {
+	vir=""
+	for i in `seq 1 $(xdotool get_num_desktops)`
+	do
+		if [ $(($i - 1)) -eq $(xdotool get_desktop) ]; then
+			vor="^fg($pink)$i^fg($white)"
+		else
+			vor="^fg($white)$i"
+		fi
+		vir="$vir	$vor"
+	done
+	echo $vir
+}
+
+
+bar () {
+while true; do \
+echo "^fg($pink)CPU: ^fg($white)$(cpu)% | \
+^fg($pink)RAM: ^fg($white)$(mem) MiB | \
+^fg($pink)Uptime: ^fg($white)$(up) | \
+^fg($pink)Packages: ^fg($white)$(pockages)\
+"; sleep 1; done | dzen2 -e - -h '20' -w '1366' -ta r -x 584 -y 748 \
+-fn 'adobe source code pro 08' \
+-bg '#2f343f' -fg '#e1e1e1' \
+-dock
+}
+
+bar2 () {
+while true; do \
+echo "$(cworkspace)\
+"; sleep 1; done | dzen2 -e - -h '20' -w '200' -ta l -x 0 -y 748 \
+-fn 'adobe source code pro 08' \
+-bg '#2f343f' -fg '#e1e1e1' \
+-dock
+}
+
+bar3 () {
+while true; do \
+echo "^fg($white)✪ An it harm none, do what ye will ✪\
+"; sleep 1; done | dzen2 -e - -h '20' -w '390' -ta l -x 200 -y 748 \
+-fn 'adobe source code pro 08' \
+-bg '#2f343f' -fg '#e1e1e1' \
+-dock
+}
+
+$(bar) | $(bar2) | $(bar3)
