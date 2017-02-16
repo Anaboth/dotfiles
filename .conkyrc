@@ -1,0 +1,35 @@
+double_buffer yes
+draw_borders no
+draw_graph_borders no
+own_window_class conky
+own_window yes
+own_window_type desktop
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_argb_visual yes
+draw_shades yes # sombra al texto
+gap_x -80 
+gap_y 5
+alignment bottom_middle
+update_interval 1
+default_color 000000 
+use_xft yes
+#font snap-7
+xftfont envy code r:size=9
+xftalpha 1
+text_buffer_size 2048
+override_utf8_locale yes
+use_spacer none
+minimum_size 1366 0
+own_window_argb_value 153
+own_window_transparent yes 
+#own_window_colour 222222
+TEXT
+${color ff0099}Time:${color} ${time %a, %d/%m/%y} - \
+${color} ${time %H:%M } | \
+${color ff0099}Kernel${color}: ${kernel} | \
+${color ff0099}Cpu:${color} ${cpu}%${color}${font} | \
+${color ff0099}RAM:${color} ${memperc}%${color}${font} |  \
+${color ff0099}Root:${color} ${fs_used_perc /}% ${fs_used /} - ${fs_size /}${color}  |  \
+${color ff0099}Home:${color} ${fs_used_perc /home}% ${fs_used /home} - ${fs_size /home}${color} | \
+${color ff0099}Packages:${color} ${exec pacman -Qq | wc -l}/${exec checkupdates | wc -l} | \
+${color} An it harm none, do what ye will |
