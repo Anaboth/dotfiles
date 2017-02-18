@@ -7,11 +7,11 @@ own_window_type desktop
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 own_window_argb_visual yes
 draw_shades yes # sombra al texto
-gap_x -80 
+gap_x -80
 gap_y 5
 alignment bottom_middle
 update_interval 1
-default_color 000000 
+default_color 443b70 
 use_xft yes
 #font snap-7
 xftfont envy code r:size=9
@@ -21,9 +21,11 @@ override_utf8_locale yes
 use_spacer none
 minimum_size 1366 0
 own_window_argb_value 153
-own_window_transparent yes 
+own_window_transparent yes
 #own_window_colour 222222
+
 TEXT
+
 ${color ff0099}Time:${color} ${time %a, %d/%m/%y} - \
 ${color} ${time %H:%M } | \
 ${color ff0099}Kernel${color}: ${kernel} | \

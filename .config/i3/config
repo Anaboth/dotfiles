@@ -26,8 +26,8 @@ font pango:monospace 10
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-gaps inner 10
-gaps outer 10
+gaps inner 5
+gaps outer 5
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -96,16 +96,16 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 "1:  Terminals"
-set $workspace2 "2:  Internet"
-set $workspace3 "3:  Telegram"
-set $workspace4 "4:  Develop"
-set $workspace5 "5:  Game"
-set $workspace6 "6:  Files"
-set $workspace7 "7:  Discord"
-set $workspace8 "8:  OBS"
-set $workspace9 "9"
-set $workspace10 "10:  Spotify"
+set $workspace1 "1:  "
+set $workspace2 "2:  "
+set $workspace3 "3:  "
+set $workspace4 "4:  "
+set $workspace5 "5:  "
+set $workspace6 "6:  "
+set $workspace7 "7:  "
+set $workspace8 "8:  "
+set $workspace9 "9: "
+set $workspace10 "10:  "
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -142,8 +142,9 @@ assign [class="Thunar"] $workspace6
 assign [class="discord"] $workspace7
 assign [class="obs"] $workspace8
 assign [class="Firefox"] $workspace2
-
 assign [class="TelegramDesktop"] $workspace3
+assign [class="net-minecraft-bootstrap-Bootstrap"] $workspace5
+assign [class="Minecraft*"] $workspace5
 
 for_window [class="^.*"] border pixel 3
 for_window [class="Spotify"] move to workspace $workspace10
@@ -185,15 +186,15 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
+set $bg-color 	         #eeeeee
+set $inactive-bg-color   #eeeeee
+set $text-color          #2f343f
+set $inactive-text-color #443b70
 set $urgent-bg-color     #E53935
 
 hide_edge_borders both
 
-# window colors
+# windo colors
 #                       border              background         text                 indicator
 client.focused          $bg-color           $bg-color          $text-color          #2f343f
 client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #2f343f
@@ -203,7 +204,10 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+        font pango:Fantasque 12
         status_command i3blocks -c /home/anaboth/.config/i3/i3blocks.conf
+        position top
+        height 20
         colors {
 			background $bg-color
 	    	separator #757575
@@ -212,7 +216,6 @@ bar {
 			inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
 			urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 		}
-		position top
 }
 
 bindsym $mod+Shift+x exec i3lock-fancy -pg
@@ -231,13 +234,11 @@ bindsym XF86AudioPrev exec playerctl previous
 
 exec conky -d -c ~/.conkyrc
 exec compton -CGb
-exec_always feh --bg-fill ~/Pictures/white_girl.jpg
-#exec_always sudo systemctl stop NetworkManager
-#exec_always sudo netctl start wlp2s5-Froeschlin
-#exec ~/DiscordCanary/DiscordCanary
-#exec spotify
-#exec google-chrome-stable
-#exec xfce4-terminal
+exec_always feh --bg-fill ~/Pictures/eucliwood.jpg
+exec xfce4-panel
+exec spotify
+exec firefox
+exec xfce4-terminal
 #exec subl3
 #exec gnome-terminal
 #exec steam
