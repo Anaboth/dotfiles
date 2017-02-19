@@ -58,11 +58,13 @@ static const Layout layouts[] = {
 /* commands */
 static const char *termcmd[]  = { "urxvt", NULL };
 static const char *roficmd[] = { "rofi", "-show" , "run" , NULL };
+static const char *cedillacmd[] = { "xdotool", "key" , "0x007c" , NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = roficmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_c,      spawn,          {.v = cedillacmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_Left,   focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_Right,  focusstack,     {.i = -1 } },
