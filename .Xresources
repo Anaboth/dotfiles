@@ -1,0 +1,38 @@
+*background: #e7e7ef
+*foreground: #9d63db
+*color0: #000000
+*color8: #6b6b6b
+*color1: #b42abf
+*color9: #c85fe8
+*color2: #9f4cb2
+*color10: #c85fe8
+*color3: #b43fb2
+*color11: #c85fe8
+*color4: #9237d4
+*color12: #c85fe8
+*color5: #a82ad4
+*color13: #c85fe8
+*color6: #924cc8
+*color14: #c85fe8
+*color7: #d2d2d2
+*color15: #ffffff
+
+URxvt.font: xft:fantasquesansmono:size=14
+URxvt.saveLines: 10000
+URxvt.cutchars: "()*,<>[]{}|''"
+URxvt.perl-ext-common: default,matcher,searchable-scrollback
+URxvt.selection-autotransform.0: s/^([^:[:space:]]+):(\\d+):?$/+$2 \\Q$1\\E/
+URxvt.skipBuiltinGlyphs: true
+URxvt.url-launcher: /usr/bin/firefox
+URxvt*colorUL: orange
+URxvt.letterSpace: -1
+URxvt.scrollBar: false
+URxvt.visualBell: true
+URxvt.internalBorder: 1
+
+rofi.color-enabled: true
+rofi.color-window: argb:95fdf6e3, #000000, #000000
+rofi.color-normal: #fdf6e3, #443b70, #eee8d5, #443b70, #eee8d5
+rofi.color-active: #fdf6e3, #443b70, #eee8d5, #443b70, #fdf6e3
+rofi.color-urgent: #fdf6e3, #443b70, #eee8d5, #443b70, #fdf6e3
+rofi.separator-style: dash
