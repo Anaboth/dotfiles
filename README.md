@@ -2,12 +2,9 @@ If you are here it seems you know how to configure your own Arch (or any other L
 
 ```
 For i3 is used i3-gaps, i3blocks-gaps-git, conky and xfce4-panel
-For herbstlufwm is used dzen2 and lemombar
+For herbstlufwm is used dzen2
 For dwm is used only dwm
+Terminal emulator used is URxvt for all
 ```
 
-It's used xfce4-terminal for all 3.
-
-Ok mom, I'll learn how to configure and use urxvt!
-
-> Herbstlufwm is not really updated (maybe 1 year that I don't it anymore)
+> Herbstlufwm is not really updated (maybe 1 year that I don't use it anymore)
