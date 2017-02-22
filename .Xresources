@@ -20,7 +20,7 @@
 URxvt.font: xft:fantasquesansmono:size=14
 URxvt.saveLines: 10000
 URxvt.cutchars: "()*,<>[]{}|''"
-URxvt.perl-ext-common: default,matcher,searchable-scrollback
+URxvt.perl-ext-common: default,matcher,searchable-scrollback,selection-to-clipboard
 URxvt.selection-autotransform.0: s/^([^:[:space:]]+):(\\d+):?$/+$2 \\Q$1\\E/
 URxvt.skipBuiltinGlyphs: true
 URxvt.url-launcher: /usr/bin/firefox

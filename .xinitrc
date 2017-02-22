@@ -2,8 +2,9 @@
 sxhkd &
 feh --bg-fill ~/Pictures/eucliwood.jpg
 xset s off
-
 xrdb ~/.Xresources
+
+$HOME/setroot.sh
 
 session=${1:-i3}
 case $session in
