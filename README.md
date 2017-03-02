@@ -4,6 +4,7 @@ If you are here it seems you know how to configure your own Arch (or any other L
 For i3 is used i3-gaps, i3blocks-gaps-git, conky and xfce4-panel
 For herbstlufwm is used dzen2
 For dwm is used only dwm
+For 2bwm is used only 2bwm and its dependencies
 Terminal emulator used is URxvt for all
 ```
 
