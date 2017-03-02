@@ -51,27 +51,22 @@ while true; do \
 echo "^fg($pink)CPU: ^fg($white)$(cpu)% | \
 ^fg($pink)RAM: ^fg($white)$(mem) MiB | \
 ^fg($pink)Uptime: ^fg($white)$(up) | \
-^fg($pink)Packages: ^fg($white)$(pockages)\
 "; sleep 1; done | dzen2 -e - -h '20' -w '1366' -ta r -x 584 -y 748 \
--fn 'adobe source code pro 08' \
 -bg '#2f343f' -fg '#e1e1e1' \
 -dock
 }
 
 bar2 () {
 while true; do \
-echo "$(cworkspace)\
-"; sleep 1; done | dzen2 -e - -h '20' -w '200' -ta l -x 0 -y 748 \
--fn 'adobe source code pro 08' \
+echo""; sleep 1; done | dzen2 -e - -h '20' -w '200' -ta l -x 0 -y 748 \
 -bg '#2f343f' -fg '#e1e1e1' \
 -dock
 }
 
 bar3 () {
 while true; do \
-echo "^fg($white)✪ An it harm none, do what ye will ✪\
+echo "^fg(\#e1e1e1)✪ An it harm none, do what ye will ✪ \
 "; sleep 1; done | dzen2 -e - -h '20' -w '390' -ta l -x 200 -y 748 \
--fn 'adobe source code pro 08' \
 -bg '#2f343f' -fg '#e1e1e1' \
 -dock
 }
