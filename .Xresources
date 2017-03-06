@@ -27,7 +27,7 @@ URxvt.url-launcher: /usr/bin/firefox
 URxvt*colorUL: orange
 URxvt.letterSpace: -1
 URxvt.scrollBar: false
-URxvt.visualBell: true
+URxvt.visualBell: false
 URxvt.internalBorder: 1
 
 rofi.color-enabled: true
