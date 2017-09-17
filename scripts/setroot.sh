@@ -21,6 +21,6 @@ packages () {
 }
 
 while true; do
-xsetroot -name "$(mem) :: $(up) :: $(packages) :: $(date) :: An it harm none, do what ye will" ;
+xsetroot -name "$(mem) :: $(up) :: $(packages) :: $(date +'%a %b %d %H:%M %Y') :: An it harm none, do what ye will" ;
 sleep 1;
 done &

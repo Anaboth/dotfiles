@@ -6,10 +6,10 @@ static const char *fonts[] = {
 };
 static const char dmenufont[]       = "monospace:size=10";
 static const char normbordercolor[] = "#adadad";
-static const char normbgcolor[]     = "#443b70";
-static const char normfgcolor[]     = "#eeeeee";
-static const char selbordercolor[]  = "#443b70";
-static const char selbgcolor[]      = "#eeeeee";
+static const char normbgcolor[]     = "#007bbe";
+static const char normfgcolor[]     = "#333333";
+static const char selbordercolor[]  = "#035ea5";
+static const char selbgcolor[]      = "#333333";
 static const char selfgcolor[]      = "#443b70";
 static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
