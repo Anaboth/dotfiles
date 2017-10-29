@@ -8,10 +8,6 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git fast-syntax-highlighting)
 
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern url)
-ZSH_HIGHLIGHT_STYLES[url-good]='fg=blue,bold'
-ZSH_HIGHLIGHT_STYLES[url-bad]='fg=magenta,bold'
-
 source $ZSH/oh-my-zsh.sh
 
 # Powerlevel9k configs
