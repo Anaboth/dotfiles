@@ -1,0 +1,78 @@
+{
+	"segments": {
+		"above": [
+			{
+				"left": [
+					{
+						"function": "powerline.segments.shell.mode"
+					},
+					{
+						"function": "powerline.segments.common.env.virtualenv",
+						"priority": 50
+					},
+					{
+						"function": "powerline.segments.shell.cwd",
+						"args": {
+							"dir_limit_depth": 2,
+							"use_path_separator": true
+						},
+						"draw_soft_divider": false,
+						"priority": 10
+					},
+					{
+						"function": "powerline.segments.shell.jobnum",
+						"draw_soft_divider": false,
+						"priority": 20
+					},
+					{
+						"type": "string",
+						"highlight_groups": ["clean"],
+						"draw_soft_divider": false,
+						"draw_hard_divider": false,
+						"width": "auto"
+					}
+				],
+				"right": [
+					{
+						"function": "powerline.segments.shell.last_pipe_status",
+						"priority": 10
+					},
+					{
+						"function": "powerline.segments.common.time.date",
+						"args": {
+							"format": "%H:%M %d/%m/%y",
+							"istime": true
+						},
+						"priority": null
+					},
+					{
+						"function": "powerline.segments.common.vcs.stash",
+						"priority": 50
+					},
+					{
+						"function": "powerline.segments.common.vcs.branch",
+						"args":{
+							"status_colors": true
+						},
+						"priority": 40
+					}
+				]
+			},
+			{}
+		],
+		"left": [
+			{
+				"function": "powerline.segments.shell.mode"
+			},
+			{
+				"function": "powerline.segments.common.time.date",
+				"args": {
+					"format": ""
+				}
+}
+		],
+		"right": [	
+			{}
+		]
+	}
+}
