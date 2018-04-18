@@ -52,6 +52,6 @@
 		"cwd:divider":                { "fg": "gray7", "bg": "black", "attrs": [] },
 		"virtualenv":                 { "fg": "white", "bg": "darkcyan", "attrs": [] },
 		"attached_clients":           { "fg": "gray8", "bg": "gray0", "attrs": [] },
-		"clean":                 { "fg": "white", "bg": "none", "attrs": [] }
+		"clean":                 { "fg": "none", "bg": "none", "attrs": [] }
 	}
 }

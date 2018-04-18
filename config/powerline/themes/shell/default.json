@@ -62,14 +62,11 @@
 		],
 		"left": [
 			{
-				"function": "powerline.segments.shell.mode"
-			},
-			{
 				"function": "powerline.segments.common.time.date",
 				"args": {
 					"format": ""
 				}
-}
+			}
 		],
 		"right": [	
 			{}
