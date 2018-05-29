@@ -30,7 +30,7 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
         usbmux uucp vcsa wwwrun xfs '_*'
 zstyle '*' single-ignored show
 
-autoload -Uz compinit
+autoload -U compinit vcs_info
 compinit
 zmodload -i zsh/complist
 # end of style
@@ -38,7 +38,7 @@ zmodload -i zsh/complist
 WORDCHARS='' # I don't fucking know what the fuck is this
 
 # Keybindings configs
-bindkey -v
+bindkey -e
 bindkey -M menuselect '^o' accept-and-infer-next-history
 if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
   function zle-line-init() {
@@ -128,8 +128,22 @@ setopt always_to_end
 
 source /home/anaboth/.config/scripts/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
-powerline-daemon -q
-. /usr/share/zsh/site-contrib/powerline.zsh
+#powerline-daemon -q
+#. /usr/share/zsh/site-contrib/powerline.zsh
+#
+zstyle ':vcs_info:*' formats %b
+
+function git_branch() {
+  vcs_info
+  if [[ ! ${vcs_info_msg_0_} = $NULL ]]
+  then
+    echo "%F{$mainColor}-%f(%F{$mainColor}${vcs_info_msg_0_}%f)"
+  fi
+}
+#PS1="$(git_branch)%F{green}[%(!.%F{red}.)%n%(!.%F{green}.)@%M]%f-%F{magenta}[%2~]%f%(!.-%F{red}[WHAT THE FUCK ARE YOU DOING AS ROOT?]%f.)%0(?..-%F{red}[%?]%f)
+#> "
+separator=$'\ue0b0'
+PS1="%F{black}%K{magenta} %~ %k%f%F{magenta}$separator%f "
 
 # Aliases
 #
@@ -141,6 +155,13 @@ alias promptreload='source ~/.zshrc'
 alias promptedit='vim ~/.zshrc'
 alias ls='ls --color=auto'
 
+EDITOR=vim
 export EDITOR=vim
 export KEYTIMEOUT=1
 export PATH="$PATH:/home/anaboth/.local/bin:/sbin:/usr/sbin:/home/linuxbrew/.linuxbrew/bin"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/anaboth/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/home/anaboth/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/anaboth/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/anaboth/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

@@ -53,4 +53,5 @@ inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\
 inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == "\"" ? "\<Right>" : "\"\"\<Left>"
 
 call plug#begin('~/.vim/plugged')
+Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
 call plug#end()
