@@ -128,34 +128,64 @@ setopt always_to_end
 
 source /home/anaboth/.config/scripts/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
-#powerline-daemon -q
-#. /usr/share/zsh/site-contrib/powerline.zsh
-#
-zstyle ':vcs_info:*' formats %b
-
-function git_branch() {
-  vcs_info
-  if [[ ! ${vcs_info_msg_0_} = $NULL ]]
-  then
-    echo "%F{$mainColor}-%f(%F{$mainColor}${vcs_info_msg_0_}%f)"
-  fi
-}
 #PS1="$(git_branch)%F{green}[%(!.%F{red}.)%n%(!.%F{green}.)@%M]%f-%F{magenta}[%2~]%f%(!.-%F{red}[WHAT THE FUCK ARE YOU DOING AS ROOT?]%f.)%0(?..-%F{red}[%?]%f)
 #> "
-separator=$'\ue0b0'
-PS1="%F{black}%K{magenta} %~ %k%f%F{magenta}$separator%f "
+separator_left=$'\ue0b0'
+separator_right=$'\ue0b2'
+PS1="%F{black}%K{magenta} %~ %k%f%F{magenta}${separator_left}%f "
+#RPS1="%{$(echotc UP 1)%}%F{white}${separator_right}%f%F{black}%K{white}%D - %*%f%k%{$(echotc DO 1)%}"
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Aliases
 #
 alias md='mkdir -p'
+alias v='vim'
 alias javar='java -jar'
 alias ping=' ping -c 5'
 alias 'cd..'='cd ..'
-alias promptreload='source ~/.zshrc'
-alias promptedit='vim ~/.zshrc'
+alias shr='source ~/.zshrc'
+alias she='vim ~/.zshrc'
 alias ls='ls --color=auto'
+alias wtf='dmesg'
+alias onoz='cat /var/log/errors.log'
+alias rtfm='man'
+alias :3='echo'
+alias visible='echo'
+alias invisible='cat'
+alias moar='more'
+alias tldr='less'
+alias alwayz='tail -f'
+alias icanhas='mkdir'
+alias gimmeh='touch'
+alias donotwant='rm'
+alias dowant='cp'
+alias gtfo='mv'
+alias nowai='chmod'
+alias hai='cd'
+alias iz='ls'
+alias plz='pwd'
+alias ihasbucket='df -h'
+alias inur='locate'
+alias iminurbase='finger'
+alias btw='nice'
+alias obtw='nohup'
+alias nomz='ps aux'
+alias nomnom='killall'
+alias byes='exit'
+alias cya='reboot'
+alias kthxbai='halt'
+alias pwned='ssh'
+alias hackzor='git init'
+alias rulz='git push'
+alias bringz='git pull'
+alias chicken='git add'
+alias oanward='git commit -m'
+alias ooanward='git commit -am'
+alias yolo='git commit -m "$(curl -s whatthecommit.com/index.txt)"'
+alias letcat='git checkout'
+alias violenz='git rebase'
 
-EDITOR=vim
 export EDITOR=vim
 export KEYTIMEOUT=1
 export PATH="$PATH:/home/anaboth/.local/bin:/sbin:/usr/sbin:/home/linuxbrew/.linuxbrew/bin"
