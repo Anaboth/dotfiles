@@ -126,16 +126,19 @@ setopt complete_in_word
 setopt always_to_end
 # end of options
 
-source /home/anaboth/.config/scripts/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+# Plugins
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+
+# PS1 configs
 #PS1="$(git_branch)%F{green}[%(!.%F{red}.)%n%(!.%F{green}.)@%M]%f-%F{magenta}[%2~]%f%(!.-%F{red}[WHAT THE FUCK ARE YOU DOING AS ROOT?]%f.)%0(?..-%F{red}[%?]%f)
 #> "
+#RPS1="%{$(echotc UP 1)%}%F{white}${separator_right}%f%F{black}%K{white}%D - %*%f%k%{$(echotc DO 1)%}"
 separator_left=$'\ue0b0'
 separator_right=$'\ue0b2'
-PS1="%F{black}%K{magenta} %~ %k%f%F{magenta}${separator_left}%f "
-#RPS1="%{$(echotc UP 1)%}%F{white}${separator_right}%f%F{black}%K{white}%D - %*%f%k%{$(echotc DO 1)%}"
-
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+gentoo_logo=$'\uf30d'
+PS1="%F{white}%(!.%K{red}.%K{magenta}) ${gentoo_logo} %k%f%(!.%F{red}.%F{magenta})%K{green}${separator_left}%f%F{black} %~ %f%k%F{green}${separator_left}%f "
 
 # Aliases
 #
