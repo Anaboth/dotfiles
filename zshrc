@@ -138,7 +138,7 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 separator_left=$'\ue0b0'
 separator_right=$'\ue0b2'
 gentoo_logo=$'\uf30d'
-PS1="%F{white}%(!.%K{red}.%K{magenta}) ${gentoo_logo}%~ %f%k%(!.%F{red}.%F{magenta})${separator_left}%f"
+PS1="%F{white}%(!.%K{red}.%K{magenta}) ${gentoo_logo} %~ %f%k%(!.%F{red}.%F{magenta})${separator_left}%f "
 
 # Aliases
 #
