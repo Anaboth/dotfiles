@@ -97,6 +97,9 @@ else
   bindkey "\e[3~" delete-char
 fi
 
+bindkey -M emacs '^[[4;5~' kill-word				  # [Ctrl-Delete] - delete forward word
+bindkey -M emacs '^H'  backward-kill-word			  # [Ctrl-Backspace] - delete backward word
+
 # Edit the current command line in $EDITOR
 autoload -U edit-command-line
 zle -N edit-command-line
