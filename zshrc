@@ -191,13 +191,16 @@ alias ooanward='git commit -am'
 alias yolo='git commit -m "$(curl -s whatthecommit.com/index.txt)"'
 alias letcat='git checkout'
 alias violenz='git rebase'
+alias gcc='gcc -std=c++17'
 
 export EDITOR=vim
 export KEYTIMEOUT=1
 export PATH="$PATH:/home/anaboth/.local/bin:/sbin:/usr/sbin:/home/linuxbrew/.linuxbrew/bin"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/anaboth/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/home/anaboth/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/home/anaboth/.gcloud/path.zsh.inc' ]; then source '/home/anaboth/.gcloud/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/anaboth/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/anaboth/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/home/anaboth/.gcloud/completion.zsh.inc' ]; then source '/home/anaboth/.gcloud/completion.zsh.inc'; fi
+
+export TEXMFHOME='~/.texmf'
