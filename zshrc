@@ -30,10 +30,15 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
         usbmux uucp vcsa wwwrun xfs '_*'
 zstyle '*' single-ignored show
 
-autoload -U compinit vcs_info
+autoload -Uz compinit vcs_info
 compinit
 zmodload -i zsh/complist
 # end of style
+
+zstyle ':vcs_info:*' formats       \
+    '%s - %b'
+
+precmd() { vcs_info }
 
 WORDCHARS='' # I don't fucking know what the fuck is this
 
@@ -122,26 +127,30 @@ setopt share_history
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushdminus
-unsetopt menu_complete
-unsetopt flowcontrol
 setopt auto_menu
 setopt complete_in_word
 setopt always_to_end
+setopt prompt_subst
+unsetopt menu_complete
+unsetopt flowcontrol
 # end of options
 
 # Plugins
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+gentoo_logo=$'\uf30d'
+separator_left=$'\ue0b0'
+separator_right=$'\ue0b2'
+git_logo=$'\ue702'
 
 # PS1 configs
 #PS1="$(git_branch)%F{green}[%(!.%F{red}.)%n%(!.%F{green}.)@%M]%f-%F{magenta}[%2~]%f%(!.-%F{red}[WHAT THE FUCK ARE YOU DOING AS ROOT?]%f.)%0(?..-%F{red}[%?]%f)
 #> "
+
+
+PS1="%F{white}%(!.%K{red}.%K{magenta}) %~ %f%k%(!.%F{red}.%F{magenta})${separator_left}%f "
 #RPS1="%{$(echotc UP 1)%}%F{white}${separator_right}%f%F{black}%K{white}%D - %*%f%k%{$(echotc DO 1)%}"
-separator_left=$'\ue0b0'
-separator_right=$'\ue0b2'
-gentoo_logo=$'\uf30d'
-PS1="%F{white}%(!.%K{red}.%K{magenta}) ${gentoo_logo} %~ %f%k%(!.%F{red}.%F{magenta})${separator_left}%f "
 
 # Aliases
 #
@@ -191,11 +200,14 @@ alias ooanward='git commit -am'
 alias yolo='git commit -m "$(curl -s whatthecommit.com/index.txt)"'
 alias letcat='git checkout'
 alias violenz='git rebase'
-alias gcc='gcc -std=c++17'
+#alias gcc='gcc'
 
 export EDITOR=vim
 export KEYTIMEOUT=1
-export PATH="$PATH:/home/anaboth/.local/bin:/sbin:/usr/sbin:/home/linuxbrew/.linuxbrew/bin"
+export PATH="$PATH:/home/anaboth/.local/bin:/sbin:/usr/sbin:/home/linuxbrew/.linuxbrew/bin:/usr/local/texlive/2018/bin/x86_64-linux"
+export MANPATH="$MANPATH:/usr/local/texlive/2018/texmf-dist/doc/man"
+export INFOPATH="$INFOPATH:/usr/local/texlive/2018/texmf-dist/doc/info"
+export TEXMFHOME='~/.texmf'
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/anaboth/.gcloud/path.zsh.inc' ]; then source '/home/anaboth/.gcloud/path.zsh.inc'; fi
@@ -203,4 +215,3 @@ if [ -f '/home/anaboth/.gcloud/path.zsh.inc' ]; then source '/home/anaboth/.gclo
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/anaboth/.gcloud/completion.zsh.inc' ]; then source '/home/anaboth/.gcloud/completion.zsh.inc'; fi
 
-export TEXMFHOME='~/.texmf'
